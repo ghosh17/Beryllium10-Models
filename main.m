@@ -30,8 +30,8 @@ eta = 0.01;%cm/yr
 t = 1e5;%yrs
 rho = 1.4;%density in g/cm3
 BIG_LAMBDA_sp = 160;% g/cm2 Attenuation legth spallation
-BIG_LAMBDA_fm = 1159;% g/cm2 Attenuation legth fast muon
-BIG_LAMBDA_sm = 4439;% g/cm2 Attenuation legth slow muon
+BIG_LAMBDA_fm = 4439;% g/cm2 Attenuation legth fast muon
+BIG_LAMBDA_sm = 1159;% g/cm2 Attenuation legth slow muon
 
 lambda = 5e-7;%decay constant for 10 Be in 1/yrs
 P_sp = 4.0459; %/g/yrs at 19JX site around 40 degree latitude 

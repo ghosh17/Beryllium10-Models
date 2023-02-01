@@ -13,14 +13,14 @@ global rho;
 
 fprintf('\nConstant exposure\n')
 %spallation
-C_spallation = P_sp ./(lambda + (eta.*rho./BIG_LAMBDA_sp)) .* (1-exp(-rho.*x./BIG_LAMBDA_sp)) .* (1-exp(-t.*(lambda + (eta.*rho./BIG_LAMBDA_sp))));
+C_spallation = P_sp ./(lambda + (eta.*rho./BIG_LAMBDA_sp)) .* (exp(-rho .* x ./BIG_LAMBDA_sp)) .* (1-exp(-t.*(lambda + (eta.*rho./BIG_LAMBDA_sp))));
 
 %fast muon
 
-C_fm = P_fm ./(lambda + (eta.*rho./BIG_LAMBDA_fm)) .* (1-exp(-rho.*x./BIG_LAMBDA_fm)) .* (1-exp(-t.*(lambda + (eta.*rho./BIG_LAMBDA_fm))));
+C_fm = P_fm ./(lambda + (eta.*rho./BIG_LAMBDA_fm)) .* (exp(-rho.*x./BIG_LAMBDA_fm)) .* (1-exp(-t.*(lambda + (eta.*rho./BIG_LAMBDA_fm))));
 
 %slow muon
-C_sm = P_sm ./(lambda + (eta.*rho./BIG_LAMBDA_sm)) .* (1-exp(-rho.*x./BIG_LAMBDA_sm)) .* (1-exp(-t*(lambda + (eta.*rho./BIG_LAMBDA_sm))));
+C_sm = P_sm ./(lambda + (eta.*rho./BIG_LAMBDA_sm)) .* (exp(-rho.*x./BIG_LAMBDA_sm)) .* (1-exp(-t*(lambda + (eta.*rho./BIG_LAMBDA_sm))));
 
 %adding up all methods of 10Be production
 C = C_spallation + C_fm + C_sm;
@@ -35,5 +35,6 @@ plot(C,x)
 title('Model 2: Continuous exposure');
 xlabel('Concnetration of 10Be');
 ylabel('Depth (cm)')
+set(gca,'Ydir','reverse')
 
 end
