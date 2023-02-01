@@ -26,8 +26,6 @@ global P_fm;
 global P_sm;
 
 x = (0:50:1000); %depth profile in 
-X = 100;% Denudation depth for abrupt erosion change
-
 eta = 3.9e-3;%cm/yr
 t = 1e5;%yrs
 rho = 1.4;%density in g/cm3
@@ -68,7 +66,7 @@ E = 5e-3;%cm/yrs
 C_allo = func_allo(x, E);
 
 %Model 3b: Abrupt denudation event such as landslide that removes cm-m of
-%material in short period. X is the denudation depth (Yang et al., 2022)
+%material in short period. X is the depth (Yang et al., 2022)
 c_abrupt = func_abrupt(x, X);
 
 

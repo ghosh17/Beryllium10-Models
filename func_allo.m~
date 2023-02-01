@@ -1,6 +1,6 @@
-%Model 2
+%Model 3a
 %Assuming: Surface sample, no inheritence, and ignorable denudation 
-function [C] = func_cexp(x)
+function [C] = func_allo(x)
 
 global lambda;
 global P_sp;
@@ -10,12 +10,10 @@ global BIG_LAMBDA_sp;
 global BIG_LAMBDA_fm;
 global BIG_LAMBDA_sm;
 global rho;
-global eta;
-global t;
 
 fprintf('\nConstant exposure\n')
 %spallation
-C_spallation = P_sp ./(lambda + (eta.*rho./BIG_LAMBDA_sp)) .* (exp(-rho .* x ./BIG_LAMBDA_sp)) .* (1-exp(-t.*(lambda + (eta.*rho./BIG_LAMBDA_sp))));
+C_spallation = (P_sp .* exp(-rho*(x+eta.*t)./BIG_LAMBDA_sp) ./ (lambda + eho.*E./BIG_LAMBDA_sp)) .*exp(-lambda.*t) +  P_sp .* exp(-rho.*x./BIG_LAMBDA_sp) .* (1-exp(-t.*(lambda + (eta.*rho./BIG_LAMBDA_sp)))) ./(lambda + (rho.*eta./BIG_LAMBDA_sp));
 
 %fast muon
 
@@ -31,10 +29,10 @@ fprintf('x = %f, \n', x);
 fprintf('eta = %f, \n', eta);
 fprintf('C = %f, \n', C);
 
-figure(2)
+figure(3)
 plot(C,x)
 % % set(gca,'Ydir','reverse')
-title('Model 2: Continuous exposure');
+title('Model 3a: Continuous exposure');
 xlabel('Concnetration of 10Be');
 ylabel('Depth (cm)')
 set(gca,'Ydir','reverse')
