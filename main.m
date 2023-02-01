@@ -25,7 +25,7 @@ global P_sp;
 global P_fm;
 global P_sm;
 
-x = 0;%(0:50:600); %depth profile in 
+x = (0:50:1000); %depth profile in 
 eta = 0.01;%cm/yr
 t = 1e5;%yrs
 rho = 1.4;%density in g/cm3
@@ -48,13 +48,13 @@ P_sm = 0.0997;
 %C(x, eta, t) = C(x, 0) * exp(-lambda*t) + (P ./(lambda + (rho.*eta./BIG_LAMBDA))).* exp(rho.*x ./ BIG_LAMBDA) .* (1 - exp(-t.* (lambda + (rho.*eta./BIG_LAMBDA))));
 
 %Model 1: At steady state, sample from top x=0 and long exposure time
-C = func_ss();% %Assuming: Surface sample, no inheritence, and ignorable denudation 
+C_ss = func_ss();% %Assuming: Surface sample, no inheritence, and ignorable denudation 
 
 
 
 % At non steady state
 %Model 2: Continuous exposure model
-
+C_cs = func_cexp(x, eta, t);
 
 %Model 3a: Changed in denudation rate due to climate, tectonics, 
 
