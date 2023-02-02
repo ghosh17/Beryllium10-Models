@@ -51,7 +51,11 @@ P_sm = 0.0997; %/g/yrs
 
 %Model 1: At steady state, sample from top x=0 and long exposure time (Yang
 %et al., 2022)
+<<<<<<< HEAD
+C_ss = func_ss(x);% %Assuming: Surface sample, no inheritence, and ignorable denudation 
+=======
 C_ss = func_ss();% %Assuming: Surface sample, no inheritence, and ignorable denudation 
+>>>>>>> fa1690e4ab5ff0b5546bab89c3e42220cd756dfb
 
 
 % ******At non steady state************** 
@@ -59,7 +63,10 @@ C_ss = func_ss();% %Assuming: Surface sample, no inheritence, and ignorable denu
 %Model 2: Continuous exposure model: Accounts for inheritence (Yang et al.,
 %2022)
 C_cs = func_cexp(x);
+<<<<<<< HEAD
+=======
 
+>>>>>>> fa1690e4ab5ff0b5546bab89c3e42220cd756dfb
 
 %Model 3a: Changed in denudation rate due to climate, tectonics, megafauna
 %extinction. Change in denudation rate e to E caused by last event t. (Yang
