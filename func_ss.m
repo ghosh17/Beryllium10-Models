@@ -12,6 +12,7 @@ global BIG_LAMBDA_sm;
 global rho;
 global eta;
 
+fprintf('\nSteady State \n')
 %spallation
 C_spallation = P_sp ./(lambda+(rho.*eta./BIG_LAMBDA_sp)) .* (exp(-rho.*x./BIG_LAMBDA_sp));
 
@@ -25,7 +26,7 @@ C_sm = P_sm ./(lambda+(rho.*eta./BIG_LAMBDA_sm)) .* (exp(-rho.*x./BIG_LAMBDA_sm)
 %adding up all methods of 10Be production
 C = C_spallation + C_fm + C_sm;
 
-fprintf('Concnetration at top of soil horizon %f \n', C);
+fprintf('C= %f \n', C);
 figure(1)
 plot(C,x);
 set(gca, 'FontSize', 18);

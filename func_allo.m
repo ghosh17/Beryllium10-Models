@@ -13,11 +13,10 @@ global rho;
 global eta;
 global t;
 
-<<<<<<< HEAD
+
 fprintf('\nAllogenic change in denudation rate\n')
-=======
-fprintf('\nConstant exposure\n')
->>>>>>> fa1690e4ab5ff0b5546bab89c3e42220cd756dfb
+
+
 %spallation
 C_spallation = (P_sp .* exp(-rho*(x+eta.*t)./BIG_LAMBDA_sp) ./ (lambda + (rho.*E./BIG_LAMBDA_sp))) .*exp(-lambda.*t) +  P_sp .* exp(-rho.*x./BIG_LAMBDA_sp) .* (1-exp(-t.*(lambda + (eta.*rho./BIG_LAMBDA_sp)))) ./(lambda + (rho.*eta./BIG_LAMBDA_sp));
 
@@ -31,8 +30,9 @@ C_sm = (P_sm .* exp(-rho*(x+eta.*t)./BIG_LAMBDA_sm) ./ (lambda + (rho.*E./BIG_LA
 %adding up all methods of 10Be production
 C = C_spallation + C_fm + C_sm;
 
-fprintf('x = %f, \n', x);
-fprintf('eta = %f, \n', eta);
+% fprintf('x = %f, \n', x);
+% fprintf('eta = %f, \n', eta);
+fprintf('\nE = Change in denudation rate e to E caused by last event t = %f cm/yrs\n', E);
 fprintf('C = %f, \n', C);
 
 figure(3)
@@ -42,10 +42,6 @@ title('Model 3a: Changed denudation model');
 xlabel('Concnetration of 10Be');
 ylabel('Depth (cm)')
 set(gca,'Ydir','reverse')
-<<<<<<< HEAD
 set(gca, 'FontSize', 18);
-
-=======
->>>>>>> fa1690e4ab5ff0b5546bab89c3e42220cd756dfb
 
 end
