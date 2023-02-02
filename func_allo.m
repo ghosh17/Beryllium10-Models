@@ -13,7 +13,11 @@ global rho;
 global eta;
 global t;
 
+<<<<<<< HEAD
+fprintf('\nAllogenic change in denudation rate\n')
+=======
 fprintf('\nConstant exposure\n')
+>>>>>>> fa1690e4ab5ff0b5546bab89c3e42220cd756dfb
 %spallation
 C_spallation = (P_sp .* exp(-rho*(x+eta.*t)./BIG_LAMBDA_sp) ./ (lambda + (rho.*E./BIG_LAMBDA_sp))) .*exp(-lambda.*t) +  P_sp .* exp(-rho.*x./BIG_LAMBDA_sp) .* (1-exp(-t.*(lambda + (eta.*rho./BIG_LAMBDA_sp)))) ./(lambda + (rho.*eta./BIG_LAMBDA_sp));
 
@@ -38,5 +42,10 @@ title('Model 3a: Changed denudation model');
 xlabel('Concnetration of 10Be');
 ylabel('Depth (cm)')
 set(gca,'Ydir','reverse')
+<<<<<<< HEAD
+set(gca, 'FontSize', 18);
+
+=======
+>>>>>>> fa1690e4ab5ff0b5546bab89c3e42220cd756dfb
 
 end
