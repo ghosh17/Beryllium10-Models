@@ -1,6 +1,0 @@
-function [] = func_river_terrace_simulator(C_ss, C_cs, C_allo, c_abrupt);
-
-
-
-
-end
