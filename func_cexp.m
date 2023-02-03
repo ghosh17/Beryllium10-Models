@@ -1,6 +1,6 @@
 %Model 2
 %Assuming: Surface sample, no inheritence, and ignorable denudation 
-function [C] = func_cexp(x)
+function [C] = func_cexp(x, eta)
 
 global lambda;
 global P_sp;
@@ -10,7 +10,7 @@ global BIG_LAMBDA_sp;
 global BIG_LAMBDA_fm;
 global BIG_LAMBDA_sm;
 global rho;
-global eta;
+%global eta;
 global t;
 
 fprintf('\nConstant exposure\n')

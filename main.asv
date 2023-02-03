@@ -71,15 +71,14 @@ C_allo = func_allo(x, eta, E);
 
 %Model 3b: Abrupt denudation event such as landslide that removes cm-m of
 %material in short period. X is the denudation depth (Yang et al., 2022)
-c_abrupt = func_abrupt(x, X, eta);
+c_abrupt = func_abrupt(x, X);
 
 %Mpost/Mpre = (10Bepre- 10Belandslide)/ (10Bepost - 10Belandslide) ; %West
 %et al., 2014
 
 %Model for river teraces
-eta2 = E;
-C_ss_2 = func_ss(x, eta2); 
-%% 
+
+C_ss_2 = func_ss(x); 
 func_river_terrace_simulator(C_ss, C_ss_2, C_cs, C_allo, c_abrupt);
 
 

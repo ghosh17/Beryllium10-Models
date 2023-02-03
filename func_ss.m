@@ -1,6 +1,6 @@
 %Model 1
 %Assuming: Surface sample, no inheritence, and ignorable denudation 
-function [C] = func_ss(x)
+function [C] = func_ss(x, eta)
 
 global lambda;
 global P_sp;
@@ -10,7 +10,7 @@ global BIG_LAMBDA_sp;
 global BIG_LAMBDA_fm;
 global BIG_LAMBDA_sm;
 global rho;
-global eta;
+%global eta;
 
 fprintf('\nSteady State \n')
 %spallation

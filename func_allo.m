@@ -1,6 +1,6 @@
 %Model 3a
 %Assuming: Surface sample, no inheritence, and ignorable denudation 
-function [C] = func_allo(x, E)
+function [C] = func_allo(x, eta, E)
 
 global lambda;
 global P_sp;
@@ -10,7 +10,7 @@ global BIG_LAMBDA_sp;
 global BIG_LAMBDA_fm;
 global BIG_LAMBDA_sm;
 global rho;
-global eta;
+%global eta;
 global t;
 
 

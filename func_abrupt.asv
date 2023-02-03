@@ -1,6 +1,6 @@
 %Model 3b
 %Assuming: Surface sample, no inheritence, and ignorable denudation 
-function [C] = func_abrupt(x, X, eta)
+function [C] = func_abrupt(x, X)
 
 global lambda;
 global P_sp; %Production spallation
@@ -10,7 +10,7 @@ global BIG_LAMBDA_sp; %effective attenuation lenght spallation
 global BIG_LAMBDA_fm; %effective attenuation lenght fast muon
 global BIG_LAMBDA_sm; %effective attenuation lenght slow muon
 global rho; %density
-%global eta; %erosion rate
+global eta; %erosion rate
 global t; %exposure age
 
 
